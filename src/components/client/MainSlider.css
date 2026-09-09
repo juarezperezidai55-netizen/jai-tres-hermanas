@@ -1,0 +1,546 @@
+.main-slider-luxury{
+
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 25px auto;
+
+  aspect-ratio: 16 / 6;
+
+  min-height: 260px;
+  max-height: 540px;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.12);
+
+}
+
+/* SLIDES */
+
+.slide-jai{
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition:
+    opacity 1s ease-in-out,
+    transform 1s ease;
+
+}
+
+.slide-jai.active{
+  opacity: 1;
+  z-index: 5;
+}
+
+/* FONDO BLUR */
+
+.slide-background-blur{
+
+  position: absolute;
+
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  filter:
+    blur(25px)
+    brightness(0.45);
+
+  transform: scale(1.12);
+
+  z-index: 1;
+
+}
+
+/* IMAGEN PRINCIPAL */
+
+.slide-image-pro{
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  transition:
+    transform 6s ease;
+
+}
+
+.slide-jai.active .slide-image-pro{
+  transform: scale(1.03);
+}
+
+/* OVERLAY */
+
+.slide-overlay-luxury{
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 clamp(25px, 5vw, 70px);
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.60) 0%,
+      rgba(0,0,0,0.15) 45%,
+      transparent 75%
+    );
+
+  pointer-events: none;
+
+}
+
+/* CONTENIDO */
+
+.slide-content-jai{
+
+  pointer-events: auto;
+
+  max-width: 520px;
+
+  color: white;
+
+  animation:
+    fadeLuxury 0.8s ease;
+
+}
+
+@keyframes fadeLuxury{
+
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* BADGE */
+
+.slide-badge{
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  margin-bottom: 20px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(10px);
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+}
+
+/* TITULO */
+
+.slide-content-jai h2{
+
+  margin: 0 0 15px 0;
+
+  font-size: clamp(2rem, 4vw, 3.6rem);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 5px 15px rgba(0,0,0,0.45);
+
+}
+
+/* SUBTITULO */
+
+.slide-content-jai p{
+
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.92);
+
+  margin-bottom: 28px;
+
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.3);
+
+}
+
+/* BOTON */
+
+.btn-slide-luxury{
+
+  padding:
+    14px 32px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f4f4f4
+    );
+
+  color: #1a1a1a;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.btn-slide-luxury:hover{
+
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffa0b6,
+      #ff8db4
+    );
+
+  color: white;
+
+}
+
+/* FLECHAS */
+
+.slider-arrow{
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 54px;
+  height: 54px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+
+}
+
+.slider-arrow:hover{
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  background:
+    rgba(255,255,255,0.25);
+
+}
+
+.slider-arrow.left{
+  left: 20px;
+}
+
+.slider-arrow.right{
+  right: 20px;
+}
+
+/* DOTS */
+
+.slider-dots{
+
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  z-index: 30;
+
+}
+
+.dot{
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.35);
+
+  cursor: pointer;
+
+  transition:
+    all 0.3s ease;
+
+}
+
+.dot.active{
+
+  width: 34px;
+
+  border-radius: 50px;
+
+  background: white;
+
+}
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+@media (max-width: 992px){
+
+  .main-slider-luxury{
+
+    aspect-ratio: 16 / 8;
+
+    border-radius: 24px;
+
+    margin: 18px;
+
+  }
+
+  .slide-overlay-luxury{
+
+    padding:
+      0 35px;
+
+  }
+
+  .slide-content-jai{
+    max-width: 400px;
+  }
+
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px){
+
+  .main-slider-luxury{
+
+    aspect-ratio: 16 / 10;
+
+    border-radius: 20px;
+
+    margin: 12px;
+
+    min-height: 420px;
+
+  }
+
+  .slide-overlay-luxury{
+
+    align-items: flex-end;
+
+    padding: 30px 25px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.82) 0%,
+        rgba(0,0,0,0.25) 55%,
+        transparent 100%
+      );
+
+  }
+
+  .slide-content-jai{
+    max-width: 100%;
+  }
+
+  .slide-content-jai h2{
+
+    font-size: 1.8rem;
+
+    margin-bottom: 10px;
+
+  }
+
+  .slide-content-jai p{
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+  }
+
+  .slide-badge{
+
+    font-size: 10px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 15px;
+
+  }
+
+  .btn-slide-luxury{
+
+    padding:
+      12px 24px;
+
+    font-size: 0.72rem;
+
+  }
+
+  .slider-arrow{
+
+    width: 42px;
+    height: 42px;
+
+  }
+
+}
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+@media (max-width: 480px){
+
+  .main-slider-luxury{
+
+    aspect-ratio: 4 / 5;
+
+    min-height: 500px;
+
+    border-radius: 18px;
+
+  }
+
+  .slide-overlay-luxury{
+
+    padding:
+      25px 20px;
+
+  }
+
+  .slide-content-jai h2{
+
+    font-size: 1.45rem;
+
+  }
+
+  .slide-content-jai p{
+
+    font-size: 0.82rem;
+
+  }
+
+  .slide-badge{
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+  }
+
+  .btn-slide-luxury{
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+  .slider-arrow{
+    display: none;
+  }
+
+  .slider-dots{
+    bottom: 15px;
+  }
+
+}

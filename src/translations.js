@@ -1,0 +1,42 @@
+export const translations = {
+  es: {
+    welcome: "Bienvenida",
+    category: "Categorías",
+    cart: "Carrito",
+    addToCart: "Añadir al Carrito",
+    handmade: "Producto Artesanal",
+    preOrder: "Bajo Pedido (4 días)",
+    new: "NUEVO",
+    available: "Disponibles",
+    outOfStock: "Agotado temporalmente",
+    back: "Volver",
+    description: "Descripción",
+    noDescription: "Sin descripción disponible.",
+    stock: "Existencias",
+    total: "Total",
+    items: "artículos",
+    instantDelivery: "Entrega inmediata en",
+    shippingFrom: "Envío desde",
+    loginToSee: "Inicia sesión para ver tiempos de entrega."
+  },
+  en: {
+    welcome: "Welcome",
+    category: "Categories",
+    cart: "Cart",
+    addToCart: "Add to Cart",
+    handmade: "Handmade Product",
+    preOrder: "Pre-order (4 days)",
+    new: "NEW",
+    available: "Available",
+    outOfStock: "Out of Stock",
+    back: "Back",
+    description: "Description",
+    noDescription: "No description available.",
+    stock: "Stock",
+    total: "Total Summary",
+    items: "items",
+    instantDelivery: "Instant delivery in",
+    shippingFrom: "Shipping from",
+    loginToSee: "Login to see delivery times."
+  }
+};

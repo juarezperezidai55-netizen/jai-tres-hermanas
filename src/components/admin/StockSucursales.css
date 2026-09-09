@@ -1,0 +1,345 @@
+/* ==========================================
+   HOJA DE ESTILOS PROFESIONAL: StockSucursales
+   ========================================== */
+
+.stock-manager-container {
+  padding: 16px;
+  animation: fadeInStock 0.4s ease-out;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.stock-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+}
+
+.table-card-margin {
+  margin-top: 24px;
+}
+
+.stock-card-header {
+  margin-bottom: 24px;
+}
+
+.stock-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1e293b;
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.stock-card-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Rejilla elástica para el formulario principal */
+.stock-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.form-group-jai {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label-jai {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.form-select-jai, 
+.form-input-jai {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-select-jai:focus,
+.form-input-jai:focus {
+  border-color: #db2777;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.1);
+}
+
+/* Estilos diferenciados dinámicos para variantes */
+.variant-animated {
+  animation: slideDownStock 0.3s ease-out;
+}
+
+.variant-label {
+  color: #db2777 !important;
+}
+
+.variant-select {
+  border: 1px solid #fbcfe8 !important;
+  background: #fff5f7 !important;
+  font-weight: 500;
+}
+
+.stock-form-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-update-stock {
+  background: #db2777;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-update-stock:hover:not(:disabled) {
+  background: #be185d;
+  transform: translateY(-1px);
+}
+
+.btn-update-stock:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Barra superior de filtros */
+.stock-filters-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.search-box-jai {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon-jai {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-box-jai input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  background: #f8fafc;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.search-box-jai input:focus {
+  border-color: #db2777;
+  background: #ffffff;
+}
+
+.filter-selectors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.filter-select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.selector-icon-jai {
+  position: absolute;
+  left: 12px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.filter-select-container select {
+  width: 100%;
+  padding: 11px 12px 11px 36px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  color: #475569;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Estructura responsiva de la tabla */
+.stock-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.stock-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.stock-data-table th {
+  background: #f8fafc;
+  padding: 14px 16px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.stock-data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.stock-row-hover:hover {
+  background: #fffafb;
+}
+
+.stock-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.stock-product-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+}
+
+.stock-product-name {
+  display: block;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.stock-product-sku {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Semáforos e indicadores visuales de stock */
+.stock-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-success-jai {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.badge-warning-jai {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.badge-danger-jai {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.stock-total-indicator {
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.stock-table-empty {
+  text-align: center;
+  padding: 40px !important;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Alineaciones útiles */
+.text-center { text-align: center; }
+.font-bold { font-weight: 700; }
+
+/* Media queries elásticas para tabletas y computadoras */
+@media (min-width: 768px) {
+  .stock-filters-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-box-jai {
+    max-width: 400px;
+  }
+
+  .filter-selectors-grid {
+    grid-template-columns: auto auto;
+  }
+
+  .filter-select-container select {
+    width: 190px;
+  }
+
+  .btn-update-stock {
+    width: auto;
+  }
+}
+
+/* Animaciones fluidas */
+@keyframes fadeInStock {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDownStock {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

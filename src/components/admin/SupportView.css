@@ -1,0 +1,436 @@
+/* ==========================================================================
+   PANEL DE CONTROL DE STOCK / SUCURSALES - JAI BOUTIQUE PREMIUM
+   ========================================================================== */
+
+:root {
+  --jai-pink: #cf69d4;
+  --jai-pink-hover: #b852bd;
+  --jai-pink-light: #fdf7fe;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --bg-main: #f8fafc;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.03), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+}
+
+/* Candado global elástico anti-desbordamiento */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+.support-view-wrapper {
+  height: calc(100vh - 120px);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--bg-main);
+}
+
+/* Encabezado del Módulo */
+.support-header-pro { 
+  margin-bottom: 24px; 
+}
+.support-header-pro h2 { 
+  margin: 0; 
+  color: var(--text-main); 
+  font-size: 1.6rem; 
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.support-header-pro p { 
+  margin: 6px 0 0; 
+  color: var(--text-muted); 
+  font-size: 0.9rem; 
+}
+
+/* Contenedor Principal en Dos Columnas (Split-Pane Layout) */
+.support-main-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 100%;
+  flex: 1;
+}
+
+/* ==========================================================================
+   COLUMNA IZQUIERDA: SELECCIÓN DE SUCURSAL / ALMACÉN (Sidebar)
+   ========================================================================== */
+.tickets-sidebar {
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+
+.sidebar-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: #ffffff;
+}
+
+.count-badge {
+  background: var(--jai-pink-light);
+  color: var(--jai-pink);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(207, 105, 212, 0.12);
+}
+
+/* Área de desplazamiento suave con scroll invisible/elegante */
+.tickets-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Tarjetas de Selección */
+.ticket-card-pro {
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  margin-bottom: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ticket-card-pro:hover { 
+  background: #ffffff; 
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.ticket-card-pro.active { 
+  background: var(--jai-pink-light); 
+  border-color: var(--jai-pink); 
+  box-shadow: 0 4px 12px rgba(207, 105, 212, 0.06);
+}
+
+.card-top { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 10px; 
+}
+
+/* Indicadores de Estado de Inventario */
+.status-dot { 
+  width: 8px; 
+  height: 8px; 
+  border-radius: 50%; 
+  background: #cbd5e1; 
+}
+.status-dot.pendiente { 
+  background: #ef4444; 
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); 
+}
+
+.msg-date { 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+}
+
+.ticket-card-pro h4 { 
+  margin: 0 0 6px; 
+  font-size: 0.95rem; 
+  font-weight: 600;
+  color: var(--text-main); 
+}
+
+.excerpt { 
+  font-size: 0.85rem; 
+  color: var(--text-muted); 
+  margin-bottom: 12px; 
+  line-height: 1.4;
+}
+
+.card-user { 
+  font-size: 0.8rem; 
+  color: var(--text-muted); 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+}
+
+/* ==========================================================================
+   COLUMNA DERECHA: PANEL DE EDICIÓN Y AJUSTES DE STOCK
+   ========================================================================== */
+.ticket-detail-pane {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.detail-header-pro {
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+
+.user-profile { 
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
+}
+
+.avatar-circle {
+  width: 48px; 
+  height: 48px; 
+  background: var(--jai-pink-light); 
+  color: var(--jai-pink);
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: 700; 
+  font-size: 1.15rem;
+  border: 1px solid rgba(207, 105, 212, 0.1);
+}
+
+.user-info h3 { 
+  margin: 0; 
+  font-size: 1.05rem; 
+  font-weight: 600;
+  color: var(--text-main); 
+}
+.user-info span { 
+  font-size: 0.8rem; 
+  color: var(--text-muted); 
+}
+
+.detail-header-actions { 
+  display: flex; 
+  gap: 12px; 
+}
+
+/* Botón de Guardado / Estatus Secundario */
+.btn-resolve-top {
+  background: #f0fdf4; 
+  color: #166534; 
+  border: 1px solid rgba(22, 101, 52, 0.08); 
+  padding: 8px 16px;
+  border-radius: 8px; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.btn-resolve-top:hover {
+  background: #dcfce7;
+}
+
+/* Cuerpo del Ajuste de Inventario */
+.detail-body-scroll { 
+  padding: 32px; 
+  overflow-y: auto; 
+  flex: 1; 
+}
+
+/* Bloque Informativo del Producto Seleccionado */
+.asunto-tag-box { 
+  background: var(--bg-main); 
+  padding: 16px 20px; 
+  border-radius: 12px; 
+  margin-bottom: 28px; 
+  border: 1px solid var(--border-color);
+}
+.asunto-tag-box small { 
+  color: var(--text-muted); 
+  text-transform: uppercase; 
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  letter-spacing: 0.06em;
+}
+.asunto-tag-box p { 
+  margin: 6px 0 0; 
+  font-weight: 600; 
+  font-size: 1.1rem;
+  color: var(--text-main); 
+}
+
+/* Burbuja de Vista Previa de Stock Actual */
+.client-message-bubble {
+  background: #f1f5f9;
+  padding: 20px 24px;
+  border-radius: 12px;
+  color: var(--text-main);
+  max-width: 85%;
+  position: relative;
+  margin-bottom: 36px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+.bubble-time { 
+  position: absolute; 
+  bottom: -22px; 
+  left: 4px; 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+}
+
+/* Formulario de Asignación / Entrada de Stock */
+.admin-reply-area { 
+  border-top: 1px solid var(--border-color); 
+  padding-top: 28px; 
+}
+.admin-reply-area label { 
+  display: block; 
+  margin-bottom: 10px; 
+  font-weight: 600; 
+  font-size: 0.8rem; 
+  color: var(--text-muted); 
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Input / Textarea Premium */
+.admin-reply-area textarea {
+  width: 100%; 
+  height: 110px; 
+  padding: 14px 16px; 
+  border-radius: 8px;
+  border: 1px solid #cbd5e1; 
+  resize: none; 
+  margin-bottom: 20px; 
+  outline: none; 
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+.admin-reply-area textarea:focus { 
+  border-color: var(--jai-pink); 
+  box-shadow: 0 0 0 4px rgba(207, 105, 212, 0.08);
+}
+
+/* Botón de Confirmación Principal */
+.btn-save-reply {
+  background: var(--jai-pink); 
+  color: #ffffff; 
+  border: none; 
+  width: 100%;
+  padding: 14px; 
+  border-radius: 8px; 
+  font-weight: 600; 
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(207, 105, 212, 0.15);
+  transition: all 0.2s ease;
+}
+.btn-save-reply:hover {
+  background: var(--jai-pink-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(207, 105, 212, 0.2);
+}
+.btn-save-reply:active {
+  transform: translateY(0);
+}
+
+/* Estado Vacío (Sin Selección) */
+.no-selection-state {
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  color: var(--text-muted); 
+  text-align: center;
+  padding: 32px;
+}
+.no-selection-state p {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+}
+
+.back-btn-mobile { 
+  display: none; 
+}
+
+/* ==========================================================================
+   SISTEMA DE ADAPTABILIDAD MULTIDISPOSITIVO (Responsivo Elástico)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .support-main-layout { 
+    grid-template-columns: 280px 1fr; /* Reduce sidebar en pantallas medianas o tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .support-view-wrapper {
+    padding: 16px;
+    height: calc(100vh - 80px); /* Ajuste de altura para layouts móviles */
+  }
+
+  .support-main-layout { 
+    grid-template-columns: 1fr; 
+    border-radius: 12px;
+  }
+  
+  /* Conmutación dinámica de vistas en móvil mediante clases de estado */
+  .support-main-layout:not(.ticket-selected) .ticket-detail-pane { 
+    display: none; 
+  }
+  
+  .support-main-layout.ticket-selected .tickets-sidebar { 
+    display: none; 
+  }
+  
+  /* Botón de Retorno para celular */
+  .back-btn-mobile { 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color); 
+    background: #ffffff; 
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 12px; 
+    color: var(--text-main); 
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .back-btn-mobile:hover {
+    background: var(--bg-main);
+  }
+
+  .btn-resolve-top span { 
+    display: none; /* Oculta texto largo en botones del header móvil */
+  }
+  .detail-header-pro { 
+    padding: 16px; 
+  }
+  .detail-body-scroll { 
+    padding: 20px; 
+  }
+  .client-message-bubble {
+    max-width: 100%; /* La información de stock ocupa todo el ancho en pantallas táctiles */
+  }
+}

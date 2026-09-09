@@ -1,0 +1,118 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 26, 0.85) !important; /* Negro traslúcido elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px); /* Efecto de desenfoque al fondo */
+}
+
+.modal-content-premium {
+  background: #FFFFFF;
+  padding: 45px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  border-top: 6px solid #D4AF37; /* Línea Dorada JAI */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #D4AF37; /* X en Dorado */
+  transition: 0.3s;
+}
+
+.modal-close-btn:hover {
+  color: #F4C2C2; /* Cambia a Rosa Palo al pasar el mouse */
+  transform: rotate(90deg);
+}
+
+.modal-header-jai h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #1A1A1A; /* Negro */
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.section-title-jai {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin: 25px 0 15px 0;
+  border-bottom: 1px solid #F5F5DC; /* Beige */
+  padding-bottom: 5px;
+}
+
+.form-group-jai {
+  margin-bottom: 20px;
+}
+
+.form-group-jai label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.input-premium {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #F5F5DC; /* Beige */
+  background: #FAFAFA;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-premium:focus {
+  border-color: #F4C2C2; /* Borde Rosa Palo al escribir */
+  background: #FFF;
+}
+
+.confirm-btn-luxury {
+  width: 100%;
+  background: #1A1A1A; /* Negro */
+  color: #D4AF37; /* Dorado */
+  padding: 15px;
+  border: 1px solid #D4AF37;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.4s;
+}
+
+.confirm-btn-luxury:hover {
+  background: #F4C2C2; /* Rosa Palo */
+  color: #1A1A1A;
+  border-color: #1A1A1A;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}

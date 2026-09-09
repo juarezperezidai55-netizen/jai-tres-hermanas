@@ -1,0 +1,654 @@
+/* CONTENEDOR PRINCIPAL */
+.orders-container-pro {
+    padding: 25px;
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: #fcfcfc;
+}
+
+/* ENCABEZADO Y BUSCADOR */
+.orders-header-pro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.orders-header-pro h2 {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin: 0;
+}
+
+.orders-header-pro p {
+    color: #b2bec3;
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+}
+
+.search-box-jai {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    width: 350px;
+}
+
+.search-box-jai input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* DISEÑO DE LA TABLA */
+.table-card-jai {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    overflow: hidden;
+    border: 1px solid #f9f9f9;
+}
+
+.jai-table-pro {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jai-table-pro th {
+    background: #fdfdfd;
+    padding: 18px;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #b2bec3;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.jai-table-pro td {
+    padding: 18px;
+    border-bottom: 1px solid #f8f9fa;
+    color: #2d3436;
+    vertical-align: middle;
+}
+
+/* CÉLULA DE CLIENTE */
+.client-info-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-name {
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.client-phone {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ETIQUETAS DE ENTREGA Y SUCURSAL */
+.delivery-tag {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.delivery-tag.domicilio {
+    background: #fdf0ff; /* Color rosa JAI suave */
+    color: #cf69d4;
+    border: 1px solid #fbdfff;
+}
+
+.delivery-tag.recogida {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #d0e7ff;
+}
+
+/* COLORES DE TEXTO */
+.folio-txt { font-weight: 800; color: #cf69d4; }
+.discount-txt { color: #cf69d4; font-weight: 600; font-size: 0.9rem; }
+.price-txt { font-weight: 800; font-size: 1rem; }
+
+/* STATUS PILLS */
+.status-pill-pro {
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.status-pill-pro.pagado { background: #e8f5e9; color: #2e7d32; }
+.status-pill-pro.pendiente { background: #fff8e1; color: #f57f17; }
+.status-pill-pro.enviado { background: #e3f2fd; color: #1565c0; }
+.status-pill-pro.cancelado { background: #ffebee; color: #c62828; }
+
+/* BOTÓN DE ACCIÓN */
+.view-btn-jai {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f2f6;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.view-btn-jai:hover {
+    background: #cf69d4;
+    color: white;
+}
+
+/* MODAL PROFESIONAL */
+.modal-jai-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 52, 54, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-jai-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-jai-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-subtitle {
+    font-size: 0.8rem;
+    color: #b2bec3;
+}
+
+.info-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-block label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #b2bec3;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.input-group-jai {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group-jai select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+/* LISTA DE PRODUCTOS EN MODAL */
+.products-list-pro {
+    margin-top: 25px;
+}
+
+.items-container {
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.item-pro-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-qty { font-weight: 800; color: #cf69d4; margin-right: 10px; }
+.item-name { font-size: 0.9rem; color: #2d3436; }
+.item-price { font-weight: 600; font-size: 0.9rem; }
+
+/* RESUMEN DE TOTALES */
+.totals-pro-card {
+    margin-top: 25px;
+    background: white;
+    padding-top: 15px;
+    border-top: 2px solid #f8f9fa;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+.total-line.discount {
+    color: #cf69d4;
+    font-weight: 600;
+}
+
+.total-line.grand-total {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #2d3436;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
+
+
+
+
+/* ... Tus estilos anteriores se mantienen ... */
+
+/* ESTILOS NUEVOS PARA FINANZAS */
+.payment-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+.card-icon { color: #cf69d4; } /* Rosa JAI para tarjeta/oxxo */
+.cash-icon { color: #2e7d32; } /* Verde para efectivo */
+
+.discount-txt {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* MODAL MEJORADO */
+.wa-btn-jai {
+    margin-top: 10px;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.wa-btn-jai:hover { background-color: #1ebe57; transform: scale(1.02); }
+
+.status-selector-jai select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background: #fdfdfd;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.payment-summary-mini {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+}
+
+.item-qty {
+    background: #cf69d4;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-right: 12px;
+}
+
+/* Ajuste de anchos para las nuevas columnas */
+.jai-table-pro th, .jai-table-pro td {
+    white-space: nowrap;
+}
+
+/* Se mantienen tus estilos base, pero mejoramos el Modal y las filas */
+
+.orders-container-pro {
+    padding: 25px;
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: #fcfcfc;
+    min-height: 100vh;
+}
+
+/* MODAL LUXURY DESIGN */
+.modal-jai-content {
+    background: white;
+    width: 95%;
+    max-width: 700px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    border: 1px solid #f0f0f0;
+}
+
+.header-folio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-style {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #f1f1f1;
+}
+
+.section-title-modal {
+    font-size: 1rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ITEMS LUXURY */
+.items-container-luxury {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.item-luxury-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f9f9f9;
+    transition: 0.2s;
+}
+
+.item-luxury-row:hover { background: #fff9ff; }
+
+.item-main-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.luxury-qty {
+    background: #cf69d4;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.name-box { display: flex; flex-direction: column; }
+.luxury-name { font-weight: 600; color: #2d3436; font-size: 0.95rem; }
+.luxury-sku { font-size: 0.7rem; color: #b2bec3; text-transform: uppercase; }
+.luxury-price { font-weight: 700; color: #2d3436; }
+
+/* TOTALS LUXURY */
+.totals-luxury-card {
+    background: #2d3436;
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.total-row.discount { color: #ff8dfb; opacity: 1; font-weight: 600; }
+
+.total-row.final {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 1;
+}
+
+.grand-total-txt {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.mini-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mini-tags span {
+    background: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid #eee;
+}
+
+.no-items { padding: 20px; text-align: center; color: #b2bec3; }
+
+
+
+
+/* Se respetan todos tus estilos originales y se agregan estas mejoras visuales */
+
+.luxury-modal {
+  border-radius: 32px !important;
+  border: 1px solid rgba(207, 105, 212, 0.2);
+  max-width: 650px !important;
+}
+
+.glass-card {
+  background: #fdfdfd;
+  border: 1px solid #f1f1f1;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.header-info-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.client-name-modal {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 4px;
+}
+
+.items-luxury-container {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.item-luxury-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.item-luxury-row:last-child { border-bottom: none; }
+
+.item-detail-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qty-badge {
+  background: #cf69d4;
+  color: white;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.name-sku-box { display: flex; flex-direction: column; }
+.product-name-txt { font-weight: 600; color: #2d3436; font-size: 0.95rem; }
+.sku-txt { font-size: 0.7rem; color: #b2bec3; text-transform: uppercase; }
+
+.financial-summary-luxury {
+  background: #2d3436;
+  padding: 25px;
+  border-radius: 24px;
+  color: white;
+}
+
+.financial-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.financial-row.discount { color: #ff8dfb; opacity: 1; font-weight: 600; }
+
+.financial-row.total-grand {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  opacity: 1;
+}
+
+.grand-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.quick-payment-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.method-tag, .type-tag {
+  background: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  border: 1px solid #eee;
+  color: #636e72;
+}
+
+.loading-items-box {
+  padding: 40px;
+  text-align: center;
+  color: #b2bec3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Spinner animado */
+.spinner-mini {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #cf69d4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+
+.wa-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.wa-btn-jai.promo {
+    background-color: #cf69d4; /* Color rosa JAI */
+}
+
+.wa-btn-jai.promo:hover {
+    background-color: #b356b8;
+}

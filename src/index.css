@@ -1,0 +1,79 @@
+:root {
+  --jai-rosa-palo: #F4C2C2;
+  --jai-dorado: #D4AF37;
+  --jai-beige: #F5F5DC;
+  --jai-negro: #1A1A1A;
+  --jai-blanco: #FFFFFF;
+}
+.modal-overlay {
+  background: rgba(26, 26, 26, 0.85) !important; /* Negro traslúcido JAI */
+}
+
+.modal-content-premium {
+  background: var(--jai-blanco);
+  border-top: 5px solid var(--jai-dorado); /* Línea dorada superior */
+  border-radius: 0; /* Bordes rectos para más elegancia */
+  padding: 40px;
+}
+
+.modal-content-premium h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--jai-negro);
+  border-bottom: 1px solid var(--jai-beige);
+  padding-bottom: 15px;
+}
+
+.modal-close-btn {
+  color: var(--jai-dorado);
+}
+
+.input-premium {
+  border: 1px solid var(--jai-beige);
+  background: var(--jai-beige);
+  padding: 12px;
+}
+
+.input-premium:focus {
+  border-color: var(--jai-rosa-palo);
+  outline: none;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  /* Logo más pequeño en móvil para que no choque con el buscador */
+  .logo-main {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  
+  /* Slider ajustado para que no tape la foto */
+  .slide-content h2 {
+    font-size: 2rem;
+  }
+
+  /* Grid de productos en 2 columnas para que no se vean gigantes */
+  .product-grid-luxury-main {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    padding: 10px;
+  }
+
+  /* Ocultar textos largos en botones para ahorrar espacio */
+  .nav-action-btn span {
+    display: none;
+  }
+
+  /* Chips de categorías con scroll lateral */
+  .quick-filters-luxury {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+}

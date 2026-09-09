@@ -1,0 +1,346 @@
+/* Variables de color para mantener la estética de JAI */
+:root {
+  --rosa-palo: #F5E1E1;
+  --dorado: #D4AF37;
+  --dorado-suave: #F3E5AB;
+  --beige: #FDF5E6;
+  --negro: #1A1A1A;
+  --gris-suave: #F9F9F9;
+  --blanco: #FFFFFF;
+}
+
+.cart-view-page {
+  background: var(--beige);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header Superior del Carrito */
+.cart-top-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--blanco);
+  border-bottom: 2px solid var(--rosa-palo);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--negro);
+  font-size: 14px;
+}
+
+.continue-shopping-link {
+  background: none;
+  border: none;
+  color: var(--negro);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.continue-shopping-link:hover {
+  color: var(--dorado);
+}
+
+/* Contenedor Principal */
+.cart-view-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Pestañas de Sucursales (Estilo Nihao) */
+.sucursal-tabs-container {
+  display: flex;
+  gap: 5px;
+  margin-bottom: -1px; /* Para que encaje con el borde del contenido */
+}
+
+.sucursal-tab {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background: var(--gris-suave);
+  cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s;
+}
+
+.sucursal-tab.active {
+  background: var(--blanco);
+  border-bottom: 3px solid var(--dorado);
+  color: var(--negro);
+}
+
+/* Lista de Productos */
+.cart-items-section {
+  background: var(--blanco);
+  border-radius: 0 8px 8px 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.select-all-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--rosa-palo);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--negro);
+}
+
+.cart-item-pro-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.2s;
+}
+
+.cart-item-pro-card:hover {
+  transform: translateX(5px);
+}
+
+.item-image-wrapper img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--rosa-palo);
+}
+
+.item-info-pro {
+  flex: 2;
+}
+
+.item-info-pro h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--negro);
+}
+
+.delivery-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #d97706; /* Ámbar para advertencia */
+  font-size: 12px;
+  margin-top: 10px;
+  background: #fffbeb;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.delivery-instant {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #059669; /* Verde para disponible */
+  font-size: 12px;
+  margin-top: 10px;
+  background: #ecfdf5;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* Controles de Precio y Cantidad */
+.item-pricing-actions {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.qty-controls-pro {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.qty-controls-pro button {
+  background: var(--gris-suave);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.qty-controls-pro span {
+  padding: 0 15px;
+  font-weight: 600;
+}
+
+.item-total-price {
+  font-weight: 700;
+  color: var(--dorado);
+  font-size: 18px;
+}
+
+/* Sidebar de Resumen */
+.summary-card-fixed {
+  background: var(--blanco);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 20px;
+  border: 1px solid var(--rosa-palo);
+}
+
+.summary-card-fixed h3 {
+  border-bottom: 2px solid var(--rosa-palo);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+.total-main-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid var(--negro);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--negro);
+}
+
+.btn-checkout-pro {
+  width: 100%;
+  background: var(--negro);
+  color: var(--dorado);
+  border: 2px solid var(--dorado);
+  padding: 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-checkout-pro:hover {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+.btn-checkout-pro:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Métodos de Pago */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cards-grid img {
+  width: 100%;
+  height: 25px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 992px) {
+  .cart-view-container {
+    grid-template-columns: 1fr;
+    margin: 15px auto;
+  }
+
+  .cart-item-pro-card {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .item-image-wrapper img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .item-pricing-actions {
+    width: 100%;
+    align-items: center;
+    border-top: 1px dashed #ddd;
+    padding-top: 15px;
+  }
+
+  .sucursal-tabs-container {
+    overflow-x: auto; /* Scroll horizontal si las pestañas no caben */
+    white-space: nowrap;
+  }
+
+  .sucursal-tab {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+/* Control estético de la imagen */
+.item-image-wrapper {
+  width: 90px;   /* Tamaño controlado */
+  height: 90px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #F5E1E1; /* Rosa palo */
+}
+
+.img-cart-aesthetic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción sin estirarse */
+}
+
+/* Estilo de los avisos de entrega para que se vean limpios */
+.delivery-warning, .delivery-instant {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.delivery-warning { background: #fffbeb; color: #d97706; }
+.delivery-instant { background: #ecfdf5; color: #059669; }

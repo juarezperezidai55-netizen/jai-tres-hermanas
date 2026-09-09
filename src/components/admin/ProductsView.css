@@ -1,0 +1,307 @@
+/* ==========================================
+   PANEL ADMINISTRATIVO - JAI BOUTIQUE
+   ========================================== */
+
+/* Contenedores Principales */
+.table-responsive, .jai-form, .sucursal-section {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    margin-top: 16px;
+    animation: smoothFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes smoothFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buscador Estético Premium */
+.search-container {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    transition: all 0.25s ease;
+}
+
+.search-container:focus-within {
+    background: #ffffff !important;
+    border-color: #1e293b; /* Tono sofisticado carbón */
+    box-shadow: 0 0 0 4px rgba(30, 41, 59, 0.06);
+}
+
+/* Tabla de Datos de Alta Gama */
+.jai-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+.jai-table th {
+    background: #fafafa;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.jai-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.9rem;
+    vertical-align: middle;
+    transition: background-color 0.2s ease;
+}
+
+.jai-table tr:hover td {
+    background-color: #fcf8fa; /* Sutil destello boutique al pasar el mouse */
+}
+
+/* Miniaturas de Imágenes de Productos */
+.img-thumb {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.img-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Badges de Inventario Estilizados */
+.stock-tag {
+    padding: 6px 12px;
+    border-radius: 6px; /* Bordes rectangulares modernos y suaves */
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid rgba(22, 101, 52, 0.08);
+    display: inline-block;
+}
+
+.stock-tag.low {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid rgba(153, 27, 27, 0.08);
+}
+
+.new-badge-admin {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Títulos y Secciones de Formularios */
+.form-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    letter-spacing: -0.01em;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Campos de Texto, Inputs y Selectores */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #1e293b;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0f172a; /* Foco elegante oscuro */
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+    background-color: #ffffff;
+}
+
+/* Área de Descripción Ampliada */
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+/* Botones de Acción Estilo Boutique */
+.btn-add-jai {
+    background: #1e293b; /* Fondo sobrio y distinguido */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+.btn-add-jai:hover {
+    background: #0f172a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(0,0,0,0.1);
+}
+
+.btn-add-jai:active {
+    transform: translateY(0);
+}
+
+.btn-cancel {
+    background: #ffffff;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+    background: #f8fafc;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+
+/* Tabs del Selector de Métodos (URL vs Archivo) */
+.method-selector {
+    display: flex;
+    gap: 6px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.method-selector .btn-tab {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.method-selector .btn-tab.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Contenedores Dinámicos de Variantes */
+.variants-list-admin div {
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.variants-list-admin div:hover {
+    border-color: #94a3b8 !important;
+    background-color: #fafafa;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO MÓVIL OPTIMIZADO
+   ========================================== */
+@media (max-width: 768px) {
+    .table-responsive, .jai-form, .sucursal-section {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .jai-table thead { 
+        display: none; 
+    }
+    
+    .jai-table tr { 
+        display: block; 
+        margin-bottom: 20px; 
+        border: 1px solid #e2e8f0; 
+        border-radius: 12px;
+        background: #ffffff;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+    }
+    
+    .jai-table td { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        text-align: right;
+        padding: 14px 16px;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.9rem;
+    }
+
+    .jai-table td:last-child {
+        border-bottom: none;
+        background: #fafafa;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .jai-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+}

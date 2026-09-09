@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(142, 68, 173, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.login-logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #8e44ad;
+  margin-bottom: 10px;
+}
+
+.login-logo span {
+  font-weight: 300;
+  color: #333;
+  font-size: 18px;
+  display: block;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.login-card h2 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.login-card .input-group {
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-card label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-card input {
+  padding: 14px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #8e44ad;
+  background: #fdfafb;
+  box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.1);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 16px;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card button:hover {
+  background: #732d91;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(142, 68, 173, 0.3);
+}
+
+.login-card button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Animación de carga */
+.spin {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Estilo para el botón flotante en App.css (opcional si lo pones ahí) */
+.admin-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 15px;
+  border-radius: 50%;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.admin-float-btn:hover {
+  transform: scale(1.1);
+} 

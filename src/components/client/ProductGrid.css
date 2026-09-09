@@ -1,0 +1,511 @@
+.shop-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.shop-sidebar {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+  border: 1px solid #eee;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+.filter-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.filter-group button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #666;
+  transition: 0.2s;
+}
+
+.filter-group button:hover { background: #fdf7fe; color: #cf69d4; }
+.filter-group button.active { background: #fdf7fe; color: #cf69d4; font-weight: bold; }
+
+.sidebar-divider { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+
+.trust-item { font-size: 12px; color: #888; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .shop-layout { grid-template-columns: 1fr; }
+  .shop-sidebar { display: none; }
+}
+/* Contenedor total */
+.shop-main-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* Sidebar */
+.shop-sidebar {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+  border: 1px solid #eee;
+  position: sticky;
+  top: 100px;
+}
+
+.filter-group button {
+  display: block; width: 100%; text-align: left; background: none; border: none;
+  padding: 10px; border-radius: 6px; cursor: pointer; color: #666;
+}
+.filter-group button.active { background: #fdf7fe; color: #cf69d4; font-weight: bold; }
+
+/* Banner de Ventajas (NUEVO) */
+.features-banner-jai {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  background: #fdf7fe; /* Color suave de JAI */
+  margin: 60px 20px;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px dashed #cf69d4;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-text h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.feature-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .shop-layout { grid-template-columns: 1fr; }
+  .shop-sidebar { display: none; }
+  .features-banner-jai { grid-template-columns: 1fr; padding: 20px; }
+}
+
+
+.product-card-jai {
+  background: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.product-card-jai:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(233, 30, 99, 0.15);
+}
+
+.product-image-wrapper {
+  position: relative;
+  height: 280px;
+  background: #fffafa;
+}
+
+.main-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ETIQUETA NUEVO  */
+.badge-nuevo-jai {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 20;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* BOTÓN CORAZÓN FLOTANTE */
+.heart-action-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.heart-action-btn:hover {
+  transform: scale(1.15);
+  background: #fff0f3;
+}
+
+.discount-floating-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: #ff4d6d;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.product-content-jai {
+  padding: 18px;
+}
+
+.product-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.product-sku-text {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.price-footer-jai {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-stack {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.price-current {
+  font-size: 20px;
+  font-weight: 800;
+  color: #c2185b;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #bbb;
+  font-size: 14px;
+}
+.heart-btn-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* BOTÓN SELECCIONAR OPCIONES (Actualizado) */
+.select-variant-btn {
+  background: #fff0f5;
+  color: #c2185b;
+  border: 1.5px solid #fce4ec;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.select-variant-btn:hover {
+  background: #c2185b;
+  color: white;
+  border-color: #c2185b;
+}
+
+.select-variant-btn:disabled {
+  background: #f5f5f5;
+  color: #ccc;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+
+.availability-wrapper {
+  margin: 10px 0;
+}
+
+.location-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.loc-chip {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.loc-chip.store {
+  background: #fdf2f8;
+  color: #be185d;
+  border: 1px solid #fbcfe8;
+}
+
+.loc-chip.delivery {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #d1fae5;
+}
+
+.stock-display-jai {
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.stock-count-jai {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.stock-none-jai {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.out-of-stock-text {
+  font-size: 11px;
+  color: #999;
+  font-style: italic;
+}
+
+.product-card-jai.out-of-stock {
+  opacity: 0.75;
+  filter: grayscale(0.2);
+}
+
+/* BOTÓN CARRITO CIRCULAR ROSA JAI */
+.add-cart-btn {
+  background: #fdf2f8;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.add-cart-btn:hover {
+  background: #db2777;
+  color: white;
+  transform: rotate(-10deg) scale(1.1);
+  box-shadow: 0 5px 15px rgba(219, 39, 119, 0.3);
+}
+
+.shop-main-wrapper-premium {
+  padding: 40px 5%;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+.shop-header-luxury {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title-luxury {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--jai-dark);
+  margin-bottom: 10px;
+}
+
+.highlight-text {
+  color: var(--jai-gold-dark);
+  font-style: italic;
+}
+
+.subtitle-luxury {
+  color: #64748b;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* CHIPS DE FILTRADO */
+.quick-filters-luxury {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.chip-luxury {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip-luxury.active, .chip-luxury:hover {
+  background: var(--jai-dark);
+  color: var(--jai-gold-light);
+  border-color: var(--jai-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* GRID DE PRODUCTOS */
+.product-grid-luxury-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TRUST BADGES */
+.trust-badges-luxury {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 40px;
+  margin-top: 80px;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--jai-dark);
+}
+
+.badge-item span {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shop-main-wrapper-premium {
+  background: var(--jai-blanco); /* Fondo limpio */
+}
+
+.highlight-text {
+  color: var(--jai-rosa-palo); /* Títulos decorativos en rosa */
+  border-bottom: 2px solid var(--jai-dorado);
+}
+
+.chip-luxury {
+  background: var(--jai-blanco);
+  border: 1px solid var(--jai-beige);
+  color: var(--jai-negro);
+}
+
+.chip-luxury.active, .chip-luxury:hover {
+  background: var(--jai-rosa-palo); /* Al seleccionar cambia a rosa palo */
+  color: var(--jai-negro);
+  border-color: var(--jai-dorado);
+}
+
+.trust-badges-luxury {
+  background: var(--jai-beige); /* Sección de confianza en beige */
+  border-top: 3px solid var(--jai-dorado);
+}
+
+.badge-item {
+  color: var(--jai-negro);
+}
+
+.badge-item svg {
+  color: var(--jai-dorado); /* Iconos en dorado */
+}

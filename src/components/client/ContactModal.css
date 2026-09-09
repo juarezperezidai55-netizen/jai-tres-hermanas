@@ -1,0 +1,254 @@
+/* ==========================================================================
+   CONTECO GENERAL Y OVERLAY (Apto para todo tipo de pantallas)
+   ========================================================================== */
+.modal-overlay-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 7, 16, 0.4); /* Fondo sutilmente oscurecido */
+  backdrop-filter: blur(8px); /* Desenfoque de fondo premium */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura quedar sobre menús o carritos */
+  padding: 16px; /* Evita que el modal toque los bordes físicos en celulares chicos */
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   CONTENEDOR DEL MODAL (Estructura elástica inteligente)
+   ========================================================================== */
+.contact-modal-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 460px; /* Ancho máximo ideal para pantallas de escritorio */
+  max-height: calc(100vh - 32px); /* Evita que se salga de la pantalla verticalmente */
+  border-radius: 24px;
+  overflow-y: auto; /* Si el contenido es largo en celulares, permite hacer scroll interno */
+  box-shadow: 0 20px 50px rgba(71, 23, 74, 0.15);
+  border: 1px solid rgba(243, 229, 245, 0.8);
+  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Ocultar barra de scroll interna de forma estética para navegadores modernos */
+.contact-modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+.contact-modal-container::-webkit-scrollbar-thumb {
+  background: #f0e2f2;
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+   CABECERA DEL MODAL
+   ========================================================================== */
+.contact-modal-header {
+  padding: 20px 24px;
+  background: #fdf8ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5e6f7;
+  box-sizing: border-box !important;
+}
+
+.header-title-jai {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-wrapper-jai {
+  background: #fff0ff;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Evita que el icono se aplaste en pantallas delgadas */
+}
+
+.header-title-jai h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c1a2e;
+  letter-spacing: -0.3px;
+}
+
+/* Botón de cierre circular */
+.close-contact-btn {
+  background: #ffffff;
+  border: 1px solid #f0e2f2;
+  color: #9c8a9e;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.close-contact-btn:hover {
+  color: #cf69d4;
+  border-color: #f7dbf9;
+  background: #fff9ff;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   CUERPO DEL FORMULARIO Y ENTRADAS (Blindaje anti-deformación horizontal)
+   ========================================================================== */
+.contact-form-body {
+  padding: 24px;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-intro {
+  font-size: 13.5px;
+  color: #756677;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.input-group-contact {
+  margin-bottom: 18px;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.input-group-contact label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #4a3b4d;
+  margin-bottom: 8px;
+}
+
+/* LA REGLA DE ORO DE LA RESPONSIVIDAD: Fuerza al padding a quedarse adentro */
+.input-group-contact input,
+.input-group-contact select,
+.input-group-contact textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e3d9e4;
+  background: #faf8fa;
+  font-size: 14px;
+  color: #332535;
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box !important; /* Mantiene controlado el tamaño real en pixeles */
+}
+
+/* Estilo para inputs bloqueados cuando hay sesión activa */
+.input-group-contact input[readonly] {
+  background: #f1ecf2;
+  color: #837485;
+  border-color: #e3dae5;
+  cursor: not-allowed;
+}
+
+.input-group-contact textarea {
+  height: 100px;
+  resize: none; /* Evita que el cliente lo estire manualmente dañando la UI */
+  line-height: 1.5;
+}
+
+/* Efectos de Focus con la paleta de colores de JAI */
+.input-group-contact input:not([readonly]):focus,
+.input-group-contact select:focus,
+.input-group-contact textarea:focus {
+  background: #ffffff;
+  border-color: #cf69d4;
+  box-shadow: 0 0 0 4px rgba(207, 105, 212, 0.12);
+}
+
+/* ==========================================================================
+   BOTÓN DE ENVÍO PREMIUM
+   ========================================================================== */
+.submit-contact-btn {
+  width: 100% !important;
+  padding: 14px;
+  background: #cf69d4;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.25s ease;
+  box-sizing: border-box !important;
+  box-shadow: 0 8px 20px rgba(207, 105, 212, 0.25);
+}
+
+.submit-contact-btn:not(:disabled):hover {
+  background: #bc56c1;
+  transform: translateY(-1.5px);
+  box-shadow: 0 10px 24px rgba(207, 105, 212, 0.35);
+}
+
+.submit-contact-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.submit-contact-btn:disabled {
+  background: #e1dae2;
+  color: #a69aa8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.loading-text-jai {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES DE PRECISIÓN (Optimizaciones finales para móviles)
+   ========================================================================== */
+
+/* Ajustes finos para celulares muy pequeños (ej. iPhone SE) o pantallas verticales compactas */
+@media (max-width: 380px) {
+  .contact-modal-header {
+    padding: 16px;
+  }
+  
+  .contact-form-body {
+    padding: 16px;
+  }
+  
+  .header-title-jai h3 {
+    font-size: 14px;
+  }
+
+  .contact-intro {
+    font-size: 12.5px;
+    margin-bottom: 16px;
+  }
+  
+  .input-group-contact {
+    margin-bottom: 14px;
+  }
+}

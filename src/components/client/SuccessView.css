@@ -1,0 +1,146 @@
+.success-page-container {
+  background-color: #FDF5E6; /* Beige JAI */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.success-card {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  padding: 50px 40px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  border: 1px solid #F5E1E1; /* Rosa Palo */
+  position: relative;
+}
+
+.success-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #D4AF37; /* Dorado */
+}
+
+.icon-main {
+  filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.3));
+}
+
+.sparkle-1 { position: absolute; top: -10px; right: -10px; color: #F5E1E1; }
+.sparkle-2 { position: absolute; bottom: 0; left: -15px; color: #D4AF37; }
+
+.success-title {
+  font-size: 2rem;
+  color: #1A1A1A;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.success-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.next-steps-section {
+  text-align: left;
+  background: #fdfcfb;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.next-steps-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #1A1A1A;
+}
+
+.step-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  background: #1A1A1A;
+  color: #D4AF37;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1A1A1A;
+}
+
+.step-text p {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+.info-box-luxury {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #D4AF37;
+  margin-bottom: 30px;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-return-shop {
+  background: #1A1A1A;
+  color: #D4AF37;
+  padding: 18px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-return-shop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-support-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Animación */
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pop-in { animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
